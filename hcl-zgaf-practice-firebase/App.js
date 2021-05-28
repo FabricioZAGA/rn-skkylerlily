@@ -12,6 +12,7 @@ import Main from "./src/components/Main";
 import firebase from "./src/utils/firebase";
 
 import "firebase/auth/";
+import ListItems from "./src/components/ListItems";
 
 export default function App() {
   const [user, setUser] = useState(undefined);
@@ -28,7 +29,7 @@ export default function App() {
     <>
       <StatusBar barStyle="light-content" />
       <SafeAreaView style={styles.background}>
-        {user ? <Main email={user.email} /> : <Auth />}
+        {user ? <ListItems email={user.email} /> : <Auth />}
       </SafeAreaView>
     </>
   );
